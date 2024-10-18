@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCropAdvisor</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('{% static "images/crop.jpg" %}');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+        /* Subtle Background Animation */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, 30px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            color: white;
+            font-family: 'Verdana', sans-serif;
+            font-size: 32px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+.nav2 nav {
+    margin-left: 70%; /* Push the nav to the right */
+}
+
+.nav2 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.nav2 a:hover {
+    text-decoration: underline;
+}
+
+        /* Marquee */
+        .marquee {
+            background-color:#b6e9b1;
+            padding: 10px;
+            color: #090000;
+            font-size: 18px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 3px 0;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-top: -5%;
+        }
+
+        /* Card container */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0px 4px 8px rgba(19, 0, 0, 0.1);
+            max-width: 700px;
+            height: 100%;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Subtitle */
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            background-color: #3E8E41;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        /* Button container to center them */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .button {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar with Project Name at the Top -->
+    <div class="navbar">
+        <h1>Agri Crop Advisor</h1>
+        <div class="nav2">
+            <nav>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'crops' %}">Crops</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Marquee for Agricultural Tips -->
+    <div class="marquee">
+        <marquee behavior="scroll" direction="left">
+            💡 Tips for Farmers: 🌱 Always check the soil moisture before planting! 🌱 Rotate crops to maintain soil health! 🌱 Use organic fertilizers for better yield! 🌱 Choose drought-resistant crop varieties to save water 🌱 Use cover crops to improve soil health and prevent erosion! 🌱 Implement integrated pest management to reduce pesticide use! 🌱 Practice crop rotation to enhance soil fertility! 🌱 Use mulching to retain moisture and suppress weeds! 🌱
+             Monitor weather forecasts to plan planting and harvesting! 🌱
+        </marquee>
+    </div>
+
+    <!-- Card with other content -->
+    <div class="container">
+        <h2>Welcome to the Crop Recommendation System</h2>
+
+        <!-- Button container -->
+        <div class="button-container">
+            <a href="{% url 'predict_crop' %}" class="button">
+                Crop Prediction
+            </a>
+            <a href="{% url 'recommend_crop' %}" class="button">
+                Crop Recommendation
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 AgriCropAdvisor @ lhonapadmayuky
+    </footer>
+</body>
+
+</html>

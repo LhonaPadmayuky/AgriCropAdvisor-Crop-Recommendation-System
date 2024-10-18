@@ -1,0 +1,381 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+
+        .crop-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+            max-width: 300px; /* Restrict the card width */
+            margin: 10px; /* Spacing between cards */
+        }
+
+        .crop-card:hover {
+            transform: scale(1.02);
+        }
+
+        .crop-image {
+            width: 100%;
+            height: 250px; /* Reduced height */
+            object-fit: cover;
+        }
+
+        .crop-info {
+            padding: 10px; /* Reduced padding */
+        }
+
+        .crop-info h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .crop-info p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .tips {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .tips h3 {
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        /* Layout change: Flexbox to arrange multiple cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Spacing between cards */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Care Tips for Crop</h1>
+
+        <div class="card-container">
+            <div class="crop-card">
+                <img src="{% static 'images/rice.jpg' %}" alt="Rice" class="crop-image">
+                <div class="crop-info">
+                    <h2>Rice</h2>
+                    <p><strong>Description:</strong> A staple food for over half the world’s population.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires plenty of water; ensure proper water management and pest control.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers warm and humid climates; grows best in flooded fields.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/maize.jpg' %}" alt="Maize" class="crop-image">
+                <div class="crop-info">
+                    <h2>Maize (Corn)</h2>
+                    <p><strong>Description:</strong> High-yielding and versatile; used for food, fodder, and biofuel.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Plant in well-drained soil; monitor for pests like corn borers.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in warm temperatures with ample sunlight.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/Chickpea.jpg' %}" alt="Chickpea" class="crop-image">
+                <div class="crop-info">
+                    <h2>Chickpea</h2>
+                    <p><strong>Description:</strong> Rich in protein and fiber; suitable for arid climates.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Plant in well-drained soil; requires less water.</p>
+                        <p><strong>Growth Conditions:</strong> Best grown in dry, warm conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/Kidney Beans.jpg' %}" alt="Kidney Beans" class="crop-image">
+                <div class="crop-info">
+                    <h2>Kidney Beans</h2>
+                    <p><strong>Description:</strong> High in protein and essential nutrients; popular in many cuisines.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Rotate with other crops to prevent soil depletion; avoid waterlogging.</p>
+                        <p><strong>Growth Conditions:</strong> Grows best in warm, well-drained soil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/pigeonpeas.jpg' %}" alt="Pigeon Peas" class="crop-image">
+                <div class="crop-info">
+                    <h2>Pigeon Peas</h2>
+                    <p><strong>Description:</strong> Nitrogen-fixing legume; good for soil health.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Grows well in dry conditions; needs well-drained soil.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers warm climates and can tolerate drought.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/MothBeans.jpg' %}" alt="Moth Beans" class="crop-image">
+                <div class="crop-info">
+                    <h2>Moth Beans</h2>
+                    <p><strong>Description:</strong> Drought-resistant legume; rich in protein.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Prefers sandy soils; minimal water requirement.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in hot, arid environments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/MungBean.jpg' %}" alt="Mung Bean" class="crop-image">
+                <div class="crop-info">
+                    <h2>Mung Bean</h2>
+                    <p><strong>Description:</strong> Quick-growing legume; nutritious and used in various dishes.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Can be grown in diverse conditions; use intercropping for better yields.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers warm weather and well-drained soil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crop-card">
+                <img src="{% static 'images/blackgram.jpg' %}" alt="Black Gram" class="crop-image">
+                <div class="crop-info">
+                    <h2>Black Gram</h2>
+                    <p><strong>Description:</strong> Source of protein and minerals; often used in Indian cuisine.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires warm weather and well-drained soil.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in tropical climates with ample rainfall.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/lentil.jpg' %}" alt="Lentil" class="crop-image">
+                <div class="crop-info">
+                    <h2>Lentil</h2>
+                    <p><strong>Description:</strong> High in protein and fiber; beneficial for soil health.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Grows well in cool weather; use crop rotation to improve soil fertility.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers loamy soils with good drainage.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/pomegranate.jpg' %}" alt="Pomegranate" class="crop-image">
+                <div class="crop-info">
+                    <h2>Pomegranate</h2>
+                    <p><strong>Description:</strong> High in antioxidants; grows well in dry climates.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires full sunlight; prune for better yield.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers well-drained soil; tolerant of drought.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/banana.jpg' %}" alt="Banana" class="crop-image">
+                <div class="crop-info">
+                    <h2>Banana</h2>
+                    <p><strong>Description:</strong> Nutrient-rich fruit; requires a warm climate.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Needs fertile, well-drained soil; protect from strong winds.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in tropical and subtropical climates.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/mango.jpg' %}" alt="Mango" class="crop-image">
+                <div class="crop-info">
+                    <h2>Mango</h2>
+                    <p><strong>Description:</strong> Popular tropical fruit; requires warm weather.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Needs good drainage; prune regularly for better fruit production.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers sunny, dry environments.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/grapes.jpg' %}" alt="Grapes" class="crop-image">
+                <div class="crop-info">
+                    <h2>Grapes</h2>
+                    <p><strong>Description:</strong> Grown for fresh consumption and wine production.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires full sun; monitor for fungal diseases.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers well-drained, fertile soil.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/watermelon.jpg' %}" alt="Watermelon" class="crop-image">
+                <div class="crop-info">
+                    <h2>Watermelon</h2>
+                    <p><strong>Description:</strong> Refreshing fruit; needs plenty of water and sunlight.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Plant in well-drained soil; avoid over-watering.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in warm, sunny environments.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/muskmelon.jpg' %}" alt="Muskmelon" class="crop-image">
+                <div class="crop-info">
+                    <h2>Muskmelon</h2>
+                    <p><strong>Description:</strong> Sweet fruit; grows well in warm climates.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires full sunlight and rich soil; regular watering needed.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers well-drained, fertile soil.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/jute.jpg' %}" alt="Jute" class="crop-image">
+                <div class="crop-info">
+                    <h2>Jute</h2>
+                    <p><strong>Description:</strong> Fibrous plant used for making burlap and ropes.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Needs a warm, humid climate; ensure proper drainage.</p>
+                        <p><strong>Growth Conditions:</strong> Grows best in well-drained loamy soil.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/cotton.jpg' %}" alt="Cotton" class="crop-image">
+                <div class="crop-info">
+                    <h2>Cotton</h2>
+                    <p><strong>Description:</strong> Key cash crop; used for textiles.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires well-drained soil and adequate sunlight; monitor for pests.</p>
+                        <p><strong>Growth Conditions:</strong> Prefers warm climates with plenty of sunshine.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/papaya.jpg' %}" alt="Papaya" class="crop-image">
+                <div class="crop-info">
+                    <h2>Papaya</h2>
+                    <p><strong>Description:</strong> Nutrient-rich fruit; grows quickly.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Prefers well-drained soil; needs full sun and regular watering.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in warm, tropical climates.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/orange.jpg' %}" alt="Orange" class="crop-image">
+                <div class="crop-info">
+                    <h2>Orange</h2>
+                    <p><strong>Description:</strong> Citrus fruit rich in vitamin C; requires warm climate.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires well-drained, acidic soil; protect from pests.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in sunny environments.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/apple.jpg' %}" alt="Apple" class="crop-image">
+                <div class="crop-info">
+                    <h2>Apple</h2>
+                    <p><strong>Description:</strong> Popular fruit; requires a cooler climate.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Needs well-drained soil; prune regularly for healthy growth.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in temperate climates.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/coffee.jpg' %}" alt="Coffee" class="crop-image">
+                <div class="crop-info">
+                    <h2>Coffee</h2>
+                    <p><strong>Description:</strong> Major cash crop; prefers shaded, humid environments.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires well-drained soil; monitor for pests and diseases.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in tropical climates with rich organic matter.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="crop-card">
+                <img src="{% static 'images/coconut.jpg' %}" alt="Coconut" class="crop-image">
+                <div class="crop-info">
+                    <h2>Coconut</h2>
+                    <p><strong>Description:</strong> Versatile crop; used for food, oil, and fiber.</p>
+                    <div class="tips">
+                        <h3>Care Tips:</h3>
+                        <p>Requires sandy, well-drained soil; protect from strong winds.</p>
+                        <p><strong>Growth Conditions:</strong> Thrives in tropical coastal areas.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </body>
+    
+    </html>
+    
+        

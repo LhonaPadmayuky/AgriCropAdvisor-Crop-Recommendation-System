@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+            line-height: 1.6;
+            color: #333;
+        }
+        h2 {
+            color: #4CAF50;
+            font-size: 28px;
+            text-align: center;
+        }
+        .result-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 40px;
+            transition: transform 0.3s ease;
+        }
+        .result-container:hover {
+            transform: scale(1.02);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e8f5e9;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 768px) {
+            .result-container {
+                padding: 20px;
+                margin-top: 20px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            li {
+                font-size: 16px;
+                padding: 10px;
+            }
+            a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Recommended Crops</h2>
+        <ul>
+            {% for crop in crops %}
+                <li><strong>{{ crop }}</strong></li>
+            {% endfor %}
+        </ul>
+    
+        <a href="/recommend_crop">Recommend Again</a>
+    </div>
+</body>
+</html>

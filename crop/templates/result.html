@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif; /* Classic font */
+            margin: 20px;
+            background-color: #e6e6e6; /* Soft grey background */
+            color: #333; /* Dark grey text */
+        }
+        h2 {
+            color: #2E8B57; /* Classic green shade */
+            border-bottom: 2px solid #ddd; /* Subtle underline */
+            padding-bottom: 10px;
+        }
+        .result-container {
+            background-color: #fff;
+            border: 1px solid #ccc; /* Soft grey border */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .crop-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .prediction-text {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #2E8B57; /* Dark green */
+            color: white; /* White text */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #1e6b42; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Crop Prediction Result</h2>
+        <p class="prediction-text">The best crop for the given conditions is: <strong>{{ prediction }}</strong></p>
+
+        <!-- Crop image displayed based on prediction -->
+        <img src="/static/images/{{ prediction }}.jpg" alt="{{ prediction }}" class="crop-image">
+
+        <!-- Link to predict another crop -->
+        <a href="/predict_crop">Predict Again</a>
+    </div>
+</body>
+</html>

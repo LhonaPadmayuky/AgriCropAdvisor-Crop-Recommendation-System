@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction System</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('{% static "images/predict.jpg" %}');
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            padding: 20px; /* Reduced padding for smaller screens */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px; /* Reduced padding for a more compact design */
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 450px; /* Reduced max-width to fit better */
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 15px; /* Reduced margin */
+            font-size: 20px; /* Smaller font size */
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 14px; /* Smaller font size */
+            color: #333;
+            margin-bottom: 5px; /* Reduced margin */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px; /* Smaller font size */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px; /* Reduced padding */
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .form-container {
+                width: 100%;
+                padding: 15px; /* Further reduced padding for mobile */
+            }
+
+            h2 {
+                font-size: 18px; /* Smaller font size for mobile */
+            }
+
+            input[type="text"], button {
+                font-size: 14px;
+                padding: 8px; /* Smaller padding for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter the Crop Data</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            <label for="nitrogen">Nitrogen (N):</label>
+            <input type="text" name="nitrogen" id="nitrogen" required>
+            
+            <label for="phosphorus">Phosphorus (P):</label>
+            <input type="text" name="phosphorus" id="phosphorus" required>
+            
+            <label for="potassium">Potassium (K):</label>
+            <input type="text" name="potassium" id="potassium" required>
+            
+            <label for="temperature">Temperature (°C):</label>
+            <input type="text" name="temperature" id="temperature" required>
+            
+            <label for="humidity">Humidity (%):</label>
+            <input type="text" name="humidity" id="humidity" required>
+            
+            <label for="ph">pH Value:</label>
+            <input type="text" name="ph" id="ph" required>
+            
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="text" name="rainfall" id="rainfall" required>
+            
+            <br><br>
+            <button type="submit">Predict Crop</button>
+            <a href="/">Return to Home page</a>
+        </form>
+    </div>
+</body>
+</html>
