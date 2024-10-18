@@ -42,7 +42,7 @@ def predict_crop(request):
     return render(request, 'index.html')
 
 # OpenWeather API key
-api_key = '978e17cabcd7846624f87ec293e4282f'
+api_key = 'your API key'
 
 # Function to get latitude and longitude for a given district and state
 def get_lat_lon(district, state):
